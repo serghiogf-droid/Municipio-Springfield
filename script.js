@@ -8,7 +8,7 @@
 
 // --- CONFIGURACIÓN DE INTEGRACIÓN ---
 // URL del Webhook de Make para la automatización (Debe ser configurada por el usuario)
-const MAKE_WEBHOOK_URL = "PEGAR_AQUI_LA_URL_DEL_WEBHOOK_DE_MAKE";
+const MAKE_WEBHOOK_URL = "https://hook.us2.make.com/0hcarb51cnl1z5o7o7evlmc9whtlap7d";
 
 // --- SELECCIÓN DE ELEMENTOS DEL DOM ---
 const form = document.getElementById('radicacionForm');
