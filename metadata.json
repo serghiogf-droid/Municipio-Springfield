@@ -1,0 +1,6 @@
+{
+  "name": "Municipio de Springfield",
+  "description": "Sitio web institucional y formulario de radicación ciudadana para el Municipio de Springfield, Cundinamarca.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

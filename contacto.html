@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulario de radicación electrónica de peticiones, quejas y reclamos para el Municipio de Springfield">
+    <title>Radicar Solicitud (PQRS-D) - Municipio de Springfield</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Barra institucional tricolor de la República de Colombia -->
+    <div class="tricolor-bar" id="barra-colombia">
+        <div class="yellow"></div>
+        <div class="blue"></div>
+        <div class="red"></div>
+    </div>
+
+    <!-- Encabezado Principal -->
+    <header class="header" id="header-principal">
+        <div class="container header-container">
+            <a href="index.html" class="brand" id="enlace-home">
+                <div class="brand-emblem">S</div>
+                <div class="brand-info">
+                    <span class="brand-title">Alcaldía de Springfield</span>
+                    <span class="brand-subtitle">Cundinamarca, Colombia</span>
+                </div>
+            </a>
+            <nav aria-label="Navegación principal">
+                <ul class="nav-menu" id="menu-navegacion">
+                    <li><a href="index.html" class="nav-link" id="link-inicio">Inicio</a></li>
+                    <li><a href="contacto.html" class="nav-link nav-btn" id="link-pqrs">Radicar solicitud</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido del Formulario de Radicación -->
+    <main class="main-content" id="contenido-radicacion">
+        <section class="container" style="max-width: 800px;">
+            <!-- Encabezado de la página -->
+            <div style="margin-bottom: 32px;" id="cabecera-formulario">
+                <a href="index.html" style="display: inline-flex; align-items: center; gap: 8px; color: var(--color-primary); text-decoration: none; font-weight: 600; font-size: 0.95rem; margin-bottom: 16px;" id="link-regresar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                    Regresar al Inicio
+                </a>
+                <h1 style="font-size: 2.2rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 8px;">Radicación Electrónica de Solicitudes</h1>
+                <p style="color: var(--color-text-body); font-size: 1.05rem; line-height: 1.6;">Diligencia el formulario oficial para radicar tu Petición, Queja, Reclamo, Sugerencia o Denuncia (PQRS-D). Todos los datos obligatorios están marcados con un asterisco (<span style="color: var(--color-accent-red); font-weight: bold;">*</span>).</p>
+            </div>
+
+            <!-- Caja contenedora del formulario -->
+            <div class="form-card" id="contenedor-formulario">
+                <form id="radicacionForm" class="radicacion-form" enctype="multipart/form-data" novalidate>
+                    
+                    <!-- SECCIÓN 1: DATOS DEL SOLICITANTE -->
+                    <fieldset id="grupo-datos-personales">
+                        <legend>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            1. Datos del Solicitante
+                        </legend>
+                        <div class="form-grid">
+                            <!-- Nombres y Apellidos -->
+                            <div class="form-group form-full" id="grupo-nombres">
+                                <label for="nombres_apellidos" class="form-label">Nombres y Apellidos completos <span class="required" aria-hidden="true">*</span></label>
+                                <input type="text" id="nombres_apellidos" name="nombres_apellidos" class="form-control" placeholder="Ej. Juan Carlos Pérez Gómez" required autocomplete="name">
+                            </div>
+
+                            <!-- Tipo de Documento -->
+                            <div class="form-group" id="grupo-tipo-doc">
+                                <label for="tipo_documento" class="form-label">Tipo de documento <span class="required" aria-hidden="true">*</span></label>
+                                <select id="tipo_documento" name="tipo_documento" class="form-control" required>
+                                    <option value="" disabled selected>Seleccione una opción...</option>
+                                    <option value="Cédula de Ciudadanía">Cédula de de Ciudadanía (C.C.)</option>
+                                    <option value="Cédula de Extranjería">Cédula de Extranjería (C.E.)</option>
+                                    <option value="Tarjeta de Identidad">Tarjeta de Identidad (T.I.)</option>
+                                    <option value="NIT">NIT (Empresas)</option>
+                                    <option value="Pasaporte">Pasaporte</option>
+                                </select>
+                            </div>
+
+                            <!-- Número de Documento -->
+                            <div class="form-group" id="grupo-documento">
+                                <label for="numero_documento" class="form-label">Número de documento <span class="required" aria-hidden="true">*</span></label>
+                                <input type="text" id="numero_documento" name="numero_documento" class="form-control" placeholder="Ej. 1012345678" required pattern="^[a-zA-Z0-9-]{5,20}$">
+                            </div>
+
+                            <!-- Correo Electrónico -->
+                            <div class="form-group" id="grupo-email">
+                                <label for="correo" class="form-label">Correo electrónico <span class="required" aria-hidden="true">*</span></label>
+                                <input type="email" id="correo" name="correo" class="form-control" placeholder="Ej. juan.perez@correo.com" required autocomplete="email">
+                            </div>
+
+                            <!-- Teléfono de contacto -->
+                            <div class="form-group" id="grupo-telefono">
+                                <label for="telefono" class="form-label">Teléfono de contacto</label>
+                                <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="Ej. 3151234567 o 6015550101" autocomplete="tel">
+                            </div>
+
+                            <!-- Dirección física -->
+                            <div class="form-group" id="grupo-direccion">
+                                <label for="direccion" class="form-label">Dirección de residencia</label>
+                                <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Ej. Calle 10 # 5-40" autocomplete="street-address">
+                            </div>
+
+                            <!-- Barrio o Vereda -->
+                            <div class="form-group" id="grupo-barrio">
+                                <label for="barrio_vereda" class="form-label">Barrio o Vereda</label>
+                                <input type="text" id="barrio_vereda" name="barrio_vereda" class="form-control" placeholder="Ej. Barrio El Centro o Vereda El Roble">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- SECCIÓN 2: DETALLES DE LA SOLICITUD -->
+                    <fieldset id="grupo-datos-peticion">
+                        <legend>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                            2. Detalles de la Solicitud
+                        </legend>
+                        <div class="form-grid">
+                            <!-- Tipo de Solicitud -->
+                            <div class="form-group" id="grupo-tipo-solicitud">
+                                <label for="tipo_solicitud" class="form-label">Tipo de solicitud <span class="required" aria-hidden="true">*</span></label>
+                                <select id="tipo_solicitud" name="tipo_solicitud" class="form-control" required>
+                                    <option value="" disabled selected>Seleccione tipo...</option>
+                                    <option value="Petición">Petición (Solicitud respetuosa de información o interés)</option>
+                                    <option value="Queja">Queja (Inconformidad con un funcionario o servicio)</option>
+                                    <option value="Reclamo">Reclamo (Incumplimiento o mala prestación del servicio)</option>
+                                    <option value="Sugerencia">Sugerencia (Idea para mejorar la gestión local)</option>
+                                    <option value="Denuncia">Denuncia (Reporte de presuntos actos de corrupción o ilícitos)</option>
+                                    <option value="Solicitud de información">Solicitud de información (Acceso a documentos públicos)</option>
+                                    <option value="Otro">Otro tipo de requerimiento</option>
+                                </select>
+                            </div>
+
+                            <!-- Dependencia sugerida -->
+                            <div class="form-group" id="grupo-dependencia">
+                                <label for="dependencia_sugerida" class="form-label">Dependencia remitente sugerida</label>
+                                <select id="dependencia_sugerida" name="dependencia_sugerida" class="form-control">
+                                    <option value="No sabe" selected>No sabe / Dirección general</option>
+                                    <option value="Atención al Ciudadano">Atención al Ciudadano</option>
+                                    <option value="Planeación">Planeación y Desarrollo Territorial</option>
+                                    <option value="Hacienda">Hacienda Pública y Tesorería</option>
+                                    <option value="Gobierno">Secretaría de Gobierno</option>
+                                    <option value="Salud">Secretaría de Salud y Sisbén</option>
+                                    <option value="Educación">Secretaría de Educación y Deporte</option>
+                                    <option value="Obras Públicas">Obras Públicas e Infraestructura Vial</option>
+                                </select>
+                            </div>
+
+                            <!-- Asunto de la solicitud -->
+                            <div class="form-group form-full" id="grupo-asunto">
+                                <label for="asunto" class="form-label">Asunto breve de la solicitud <span class="required" aria-hidden="true">*</span></label>
+                                <input type="text" id="asunto" name="asunto" class="form-control" placeholder="Ej. Solicitud de pavimentación o Solicitud de cupo escolar Sisbén" required minlength="5">
+                            </div>
+
+                            <!-- Descripción detallada -->
+                            <div class="form-group form-full" id="grupo-descripcion">
+                                <label for="descripcion" class="form-label">Descripción detallada <span class="required" aria-hidden="true">*</span></label>
+                                <textarea id="descripcion" name="descripcion" class="form-control" placeholder="Describe los hechos, fechas, ubicaciones y detalles de manera clara. Mínimo 20 caracteres." required minlength="20"></textarea>
+                                <small style="display: block; font-size: 0.8rem; color: var(--color-text-muted); margin-top: 4px;" id="descripcion-counter">Caracteres redactados: <span id="ccount" style="font-weight: 600;">0</span> / mínimo 20.</small>
+                            </div>
+
+                            <!-- Medio preferido de respuesta -->
+                            <div class="form-group form-full" id="grupo-medio">
+                                <label for="medio_respuesta" class="form-label">Medio de respuesta prioritario preferido <span class="required" aria-hidden="true">*</span></label>
+                                <select id="medio_respuesta" name="medio_respuesta" class="form-control" required>
+                                    <option value="Correo electrónico" selected>Correo electrónico registrado (Digital y rápido)</option>
+                                    <option value="Teléfono">Por teléfono (Llamada aclaratoria o SMS)</option>
+                                    <option value="Dirección física">Dirección física registrada (Envío postal certificado)</option>
+                                </select>
+                            </div>
+
+                            <!-- Adjuntar Uno o Varios Archivos -->
+                            <div class="form-group form-full" id="grupo-archivos">
+                                <label class="form-label">Adjuntar soportes o documentos descriptivos (Opcional)</label>
+                                <div class="file-upload-zone" id="dragZone">
+                                    <svg class="file-upload-icon" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                                    <p class="file-upload-text">Arrastra aquí tus archivos o haz clic para buscarlos</p>
+                                    <p class="file-upload-hint">Formatos soportados: PDF, JPG, PNG, DOC, DOCX, XLS, XLSX. Peso total máximo de los archivos: 4.5 MB.</p>
+                                    <input type="file" id="archivos" name="archivos" class="file-input" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx">
+                                </div>
+                                <ul class="file-list" id="listaAdjuntos"></ul>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- TRATAMIENTO DE DATOS PERSONALES -->
+                    <div class="form-group" style="margin-top: 12px;" id="contrato-datos-personales">
+                        <label class="checkbox-group">
+                            <input type="checkbox" id="acepta_datos" name="acepta_datos" required value="S">
+                            <span class="checkbox-label">
+                                Acepto y autorizo expresamente el <a href="#" onclick="alert('DECLARACIÓN DE TRATAMIENTO DE DATOS:\n\nSus datos personales recogidos en este sitio web serán custodiados de conformidad con la Ley 1581 de 2012 de Habeas Data de la República de Colombia. Serán tratados única y exclusivamente para tramitar, evaluar y responder formalmente a las peticiones radicadas en nuestro sistema institucional.'); return false;">tratamiento de mis datos personales</a> de conformidad con la política de Habeas Data y la Ley 1581 de 2012 de la República de Colombia. <span class="required" aria-hidden="true">*</span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- Panel de Feedback (Mensajes de éxito o error) -->
+                    <div id="responseMessage" class="response-message" role="alert" aria-live="assertive"></div>
+
+                    <!-- Botón de Envío Meticuloso -->
+                    <div style="margin-top: 32px;" id="bloque-submit">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 14px;" id="submitBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                            Radicar Solicitud Oficialmente
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="footer" id="pie-pagina">
+        <div class="container footer-grid">
+            <div class="footer-col" id="columna-gobierno">
+                <h3>Municipio de Springfield</h3>
+                <p><strong>Alcaldía Municipal de Springfield (Cundinamarca)</strong></p>
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                    Sede Administrativa Central: Carrera 7 No. 10-25, Palacio Municipal
+                </p>
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    Número telefónico: +57 601 555 0101
+                </p>
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    Correo oficial: contacto@springfield.gov.co
+                </p>
+            </div>
+            
+            <div class="footer-col" id="columna-atencion">
+                <h3>Atención al Ciudadano</h3>
+                <p><strong>Horarios:</strong> Lunes a viernes de 8:00 a. m. a 5:00 p. m. </p>
+                <p><strong>Línea de orientación:</strong> +57 601 555 0101 Opción 1</p>
+                <p><strong>Radicaciones:</strong> 24 horas a través de esta sede virtual.</p>
+            </div>
+            
+            <div class="footer-col" id="columna-enlaces">
+                <h3>Enlaces Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html" id="flink-inicio">Inicio</a></li>
+                    <li><a href="contacto.html" id="flink-radicar">Radicar solicitud</a></li>
+                    <li><a href="#servicios" id="flink-servicios">Atención al ciudadano</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Alcaldía Municipal de Springfield. Todos los derechos reservados.</p>
+            <p class="academic-note" id="texto-academicos">Sitio demostrativo creado con fines académicos para ejercicios de automatización con Make.</p>
+        </div>
+    </footer>
+
+    <!-- Script de validación y control de envíos (Make integration) -->
+    <script src="script.js"></script>
+</body>
+</html>
